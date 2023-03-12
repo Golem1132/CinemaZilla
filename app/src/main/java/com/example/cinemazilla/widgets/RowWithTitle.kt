@@ -1,4 +1,4 @@
-package com.example.cinemazilla.components
+package com.example.cinemazilla.widgets
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -9,6 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import com.example.cinemazilla.components.MovieCard
 
 @Composable
 fun RowWithTitle(title: String, icon: ImageVector) {
