@@ -22,6 +22,9 @@ fun RowWithTitle(title: String, icon: ImageVector) {
                 .fillMaxWidth()
                 .height(250.dp)
         ) {
+            items(2) {
+                MovieCard()
+            }
 
         }
     }
