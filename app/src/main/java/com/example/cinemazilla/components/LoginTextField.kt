@@ -9,6 +9,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 
@@ -31,7 +32,10 @@ fun LoginTextField(textState: MutableState<String>, label: String, showIcon: Boo
                     modifier = Modifier.clickable {
                         isVisible = !isVisible
                     },
-                    imageVector = Icons.Default.Refresh,
+                    painter = painterResource(id = if (!isVisible)
+                    com.example.cinemazilla.R.drawable.ic_baseline_visibility_24
+                    else
+            com.example.cinemazilla.R.drawable.ic_baseline_visibility_off_24),
                     contentDescription = "Show"
                 )
             else Box {}
