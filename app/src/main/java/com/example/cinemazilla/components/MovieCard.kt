@@ -20,7 +20,7 @@ import coil.compose.SubcomposeAsyncImageContent
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 
-
+//"https://images.unsplash.com/photo-1674574124473-e91fdcabaefc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 private val imageModifier = Modifier
     .fillMaxWidth()
     .fillMaxHeight(0.7f)
@@ -41,13 +41,15 @@ fun MovieCard() {
                 ) {
                     val state = painter.state
                     if (state is AsyncImagePainter.State.Loading || state is AsyncImagePainter.State.Error) {
-                        CircularProgressIndicator()
+                        CircularProgressIndicator(modifier = Modifier
+                            .aspectRatio(1f))
                     } else {
                         SubcomposeAsyncImageContent()
                     }
                 }
             }
-            Text(text = "TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE ",
+            Text(modifier = Modifier.padding(horizontal = 10.dp),
+                text = "TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE ",
             maxLines = 2,
             softWrap = true,
                 overflow = TextOverflow.Ellipsis

@@ -19,9 +19,8 @@ fun HomeScreen() {
         .fillMaxSize()
         .padding(10.dp),
     horizontalAlignment = Alignment.CenterHorizontally,
-    verticalArrangement = Arrangement.SpaceAround) {
+    verticalArrangement = Arrangement.spacedBy(20.dp)) {
         RowWithTitle(title = "Newest movies", icon = Icons.Default.Warning)
-        Divider(thickness = 1.dp)
         RowWithTitle(title = "Observed", icon = Icons.Default.Favorite)
 
     }

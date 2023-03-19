@@ -2,6 +2,7 @@ package com.example.cinemazilla.widgets
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,5 +32,6 @@ fun RowWithTitle(title: String, icon: ImageVector) {
             }
 
         }
+        Divider(thickness = 1.dp)
     }
 }
