@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "166310771578",
+    "firebase_url": "https://cinemazilla-3bd0f-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "cinemazilla-3bd0f",
+    "storage_bucket": "cinemazilla-3bd0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166310771578:android:9b8dbddfd890cdb42e74c3",
+        "android_client_info": {
+          "package_name": "com.example.cinemazilla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166310771578-k4dbglbi4fnln4419f3v4tehqt1rtnrm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzGHkm8TYkfdXJbuA9u9n7XecWiv3D1uA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166310771578-k4dbglbi4fnln4419f3v4tehqt1rtnrm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

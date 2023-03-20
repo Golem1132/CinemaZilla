@@ -16,7 +16,6 @@ import com.example.cinemazilla.components.LargeMovieCard
 import com.example.cinemazilla.components.SmallMovieCard
 import com.example.cinemazilla.widgets.RowWithTitle
 
-@Preview
 @Composable
 fun HomeScreen() {
     val scrollState = rememberScrollState()

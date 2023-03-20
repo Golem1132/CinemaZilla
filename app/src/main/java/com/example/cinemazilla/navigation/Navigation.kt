@@ -11,6 +11,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.cinemazilla.screens.DetailsScreen
 import com.example.cinemazilla.screens.homescreen.HomeScreen
+import com.example.cinemazilla.screens.loginscreen.LoginScreen
 
 @Composable
 fun Navigation(padding: PaddingValues) {
@@ -31,6 +32,10 @@ fun Navigation(padding: PaddingValues) {
             DetailsScreen(
 //                navBackStackEntry.arguments?.getString("movieId")
             )
+        }
+        
+        composable(route = Screens.LoginScreen.name) {
+            LoginScreen(navController = navController)
         }
 
     }
