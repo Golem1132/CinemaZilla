@@ -10,7 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.cinemazilla.screens.DetailsScreen
-import com.example.cinemazilla.screens.HomeScreen
+import com.example.cinemazilla.screens.homescreen.HomeScreen
 
 @Composable
 fun Navigation(padding: PaddingValues) {
