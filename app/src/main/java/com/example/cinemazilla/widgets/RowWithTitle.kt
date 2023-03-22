@@ -21,15 +21,6 @@ private val modifier = Modifier
     .height(250.dp)
 
 
-@Preview
-@Composable
-fun PrevRow() {
-    val list = listOf(1,2,3,4,5)
-    RowWithTitle(moviesList = list, rowTitle = "Trending") {
-        LargeMovieCard(item = it)
-        
-    }
-}
 
 
 @Composable

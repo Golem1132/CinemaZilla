@@ -21,6 +21,7 @@ import coil.compose.SubcomposeAsyncImage
 import coil.compose.SubcomposeAsyncImageContent
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
+import com.example.cinemazilla.model.Film
 
 //"https://images.unsplash.com/photo-1674574124473-e91fdcabaefc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 private val imageModifier = Modifier
@@ -29,7 +30,7 @@ private val imageModifier = Modifier
     .clip(RoundedCornerShape(bottomStartPercent = 10, bottomEndPercent = 10))
 
 @Composable
-fun <T>LargeMovieCard(item: T) {
+fun LargeMovieCard(item: Film) {
     Column(
         modifier = Modifier
             .width(200.dp)
@@ -41,7 +42,7 @@ fun <T>LargeMovieCard(item: T) {
     ) {
         SubcomposeAsyncImage(
             modifier = imageModifier,
-            model = "https://images.unsplash.com/photo-1674574124473-e91fdcabaefc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+            model = item.images.poster,
             contentScale = ContentScale.FillBounds,
             contentDescription = ""
         ) {
@@ -57,7 +58,7 @@ fun <T>LargeMovieCard(item: T) {
         }
         Text(
             modifier = Modifier.padding(horizontal = 10.dp),
-            text = "TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE TITLE ",
+            text = item.filmName,
             maxLines = 1,
             softWrap = true,
             overflow = TextOverflow.Ellipsis

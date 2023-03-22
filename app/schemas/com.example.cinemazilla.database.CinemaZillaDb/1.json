@@ -2,59 +2,77 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "2f1283db1551c5dcdab36ef32f2d6d8e",
+    "identityHash": "898c4b1f5064386de1b69412d4de65f9",
     "entities": [
       {
-        "tableName": "Movie",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `description` TEXT NOT NULL, `director` TEXT NOT NULL, `genre` TEXT NOT NULL, `release_date` TEXT NOT NULL, `image_link` TEXT NOT NULL)",
+        "tableName": "Film",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`age_rating` TEXT NOT NULL, `film_id` INTEGER NOT NULL, `film_name` TEXT NOT NULL, `film_trailer` TEXT NOT NULL, `images` TEXT NOT NULL, `imdb_id` INTEGER NOT NULL, `imdb_title_id` TEXT NOT NULL, `other_titles` TEXT NOT NULL, `release_dates` TEXT NOT NULL, `synopsis_long` TEXT NOT NULL, PRIMARY KEY(`film_id`))",
         "fields": [
           {
-            "fieldPath": "id",
-            "columnName": "id",
+            "fieldPath": "ageRating",
+            "columnName": "age_rating",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "filmId",
+            "columnName": "film_id",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
-            "fieldPath": "title",
-            "columnName": "title",
+            "fieldPath": "filmName",
+            "columnName": "film_name",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "description",
-            "columnName": "description",
+            "fieldPath": "filmTrailer",
+            "columnName": "film_trailer",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "director",
-            "columnName": "director",
+            "fieldPath": "images",
+            "columnName": "images",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "genre",
-            "columnName": "genre",
+            "fieldPath": "imdbId",
+            "columnName": "imdb_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imdbTitleId",
+            "columnName": "imdb_title_id",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "releaseDate",
-            "columnName": "release_date",
+            "fieldPath": "otherTitles",
+            "columnName": "other_titles",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "imageLink",
-            "columnName": "image_link",
+            "fieldPath": "releaseDates",
+            "columnName": "release_dates",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "synopsisLong",
+            "columnName": "synopsis_long",
             "affinity": "TEXT",
             "notNull": true
           }
         ],
         "primaryKey": {
-          "autoGenerate": true,
+          "autoGenerate": false,
           "columnNames": [
-            "id"
+            "film_id"
           ]
         },
         "indices": [],
@@ -64,7 +82,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2f1283db1551c5dcdab36ef32f2d6d8e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '898c4b1f5064386de1b69412d4de65f9')"
     ]
   }
 }

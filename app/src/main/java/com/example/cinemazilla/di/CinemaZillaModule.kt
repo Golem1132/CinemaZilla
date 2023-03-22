@@ -30,7 +30,7 @@ class CinemaZillaModule {
         Room.databaseBuilder(
             context,
             CinemaZillaDb::class.java,
-            ""
+            "cinemazilla"
         ).fallbackToDestructiveMigration()
             .build()
 }

@@ -12,6 +12,7 @@ import com.example.cinemazilla.model.Film
     exportSchema = true,
     autoMigrations = []
 )
+@androidx.room.TypeConverters(TypeConverters::class)
 abstract class CinemaZillaDb: RoomDatabase() {
     abstract fun moviesDao(): MoviesDao
 }

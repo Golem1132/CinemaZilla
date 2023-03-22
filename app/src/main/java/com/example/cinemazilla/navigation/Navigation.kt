@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -11,6 +12,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.cinemazilla.screens.DetailsScreen
 import com.example.cinemazilla.screens.homescreen.HomeScreen
+import com.example.cinemazilla.screens.homescreen.HomeViewModel
 import com.example.cinemazilla.screens.loginscreen.LoginScreen
 
 @Composable
@@ -22,7 +24,8 @@ fun Navigation(padding: PaddingValues) {
         startDestination = Screens.HomeScreen.name) {
 
         composable(route = Screens.HomeScreen.name) {
-            HomeScreen()
+            val viewModel = hiltViewModel<HomeViewModel>()
+                HomeScreen(viewModel)
         }
         composable(route = "${Screens.DetailsScreen.name}/{movieId}",
         arguments = listOf(navArgument("movieId"){

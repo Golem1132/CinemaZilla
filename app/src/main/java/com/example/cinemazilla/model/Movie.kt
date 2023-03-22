@@ -2,6 +2,7 @@ package com.example.cinemazilla.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 data class Movie(
     val films: List<Film>
@@ -12,6 +13,7 @@ data class Film(
     @ColumnInfo(name = "age_rating")
     val ageRating: List<AgeRating>,
     @ColumnInfo(name = "film_id")
+    @PrimaryKey(autoGenerate = false)
     val filmId: Int,
     @ColumnInfo(name = "film_name")
     val filmName: String,

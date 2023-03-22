@@ -8,6 +8,7 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Divider
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -17,7 +18,10 @@ import com.example.cinemazilla.components.SmallMovieCard
 import com.example.cinemazilla.widgets.RowWithTitle
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    viewModel: HomeViewModel
+) {
+    val filmList = viewModel.filmList.collectAsState()
     val scrollState = rememberScrollState()
     Column(modifier = Modifier
         .fillMaxSize()
@@ -25,16 +29,12 @@ fun HomeScreen() {
         .verticalScroll(scrollState),
     horizontalAlignment = Alignment.CenterHorizontally,
     verticalArrangement = Arrangement.spacedBy(20.dp)) {
-        RowWithTitle(moviesList = listOf<String>("","","","",""), rowTitle = "Newest movies") {
+        RowWithTitle(moviesList = filmList.value, rowTitle = "Newest movies") {
             LargeMovieCard(item = it)
 
         }
         RowWithTitle(moviesList = listOf<String>("","","","","",""), rowTitle = "Observed") {
             SmallMovieCard()
-        }
-        RowWithTitle(moviesList = listOf<String>("","","","",""), rowTitle = "Newest movies") {
-            LargeMovieCard(item = it)
-
         }
 
     }
