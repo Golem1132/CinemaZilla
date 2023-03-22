@@ -2,11 +2,11 @@ package com.example.cinemazilla.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.cinemazilla.data.Movie
+import com.example.cinemazilla.model.Film
 
 @Database(
     entities = [
-        Movie::class
+        Film::class
                ],
     version = 1,
     exportSchema = true,
