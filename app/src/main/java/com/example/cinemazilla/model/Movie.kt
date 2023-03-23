@@ -10,26 +10,26 @@ data class Movie(
 
 @Entity
 data class Film(
-    @ColumnInfo(name = "age_rating")
-    val ageRating: List<AgeRating>,
-    @ColumnInfo(name = "film_id")
+    @ColumnInfo(name = "ageRating")
+    val age_rating: List<AgeRating>?,
+    @ColumnInfo(name = "filmId")
     @PrimaryKey(autoGenerate = false)
-    val filmId: Int,
-    @ColumnInfo(name = "film_name")
-    val filmName: String,
-    @ColumnInfo(name = "film_trailer")
-    val filmTrailer: String,
+    val film_id: Int,
+    @ColumnInfo(name = "filmName")
+    val film_name: String?,
+    @ColumnInfo(name = "filmTrailer")
+    val film_trailer: String?,
     val images: Images,
-    @ColumnInfo(name = "imdb_id")
-    val imdbId: Int,
-    @ColumnInfo(name = "imdb_title_id")
-    val imdbTitleId: String,
-    @ColumnInfo(name = "other_titles")
-    val otherTitles: String,
-    @ColumnInfo(name = "release_dates")
-    val releaseDates: List<ReleaseDate>,
-    @ColumnInfo(name = "synopsis_long")
-    val synopsisLong: String
+    @ColumnInfo(name = "imdbId")
+    val imdb_id: Int,
+    @ColumnInfo(name = "imdbTitleId")
+    val imdb_title_id: String?,
+    @ColumnInfo(name = "otherTitles")
+    val other_titles: String?,
+    @ColumnInfo(name = "releaseDates")
+    val release_dates: List<ReleaseDate>?,
+    @ColumnInfo(name = "synopsisLong")
+    val synopsis_long: String?
 )
 
 data class Status(

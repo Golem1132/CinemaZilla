@@ -5,6 +5,8 @@ import androidx.room.Room
 import com.example.cinemazilla.database.CinemaZillaDb
 import com.example.cinemazilla.database.MoviesDao
 import com.example.cinemazilla.repository.DbRepository
+import com.example.cinemazilla.retrofit.CinemaZillaApi
+import com.example.cinemazilla.retrofit.api
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +17,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class CinemaZillaModule {
+
+    @Provides
+    @Singleton
+    fun provideApi(): CinemaZillaApi = api
 
     @Provides
     @Singleton
@@ -31,6 +37,7 @@ class CinemaZillaModule {
             context,
             CinemaZillaDb::class.java,
             "cinemazilla"
-        ).fallbackToDestructiveMigration()
+        )
+            .fallbackToDestructiveMigration()
             .build()
 }

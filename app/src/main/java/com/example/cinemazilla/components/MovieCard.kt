@@ -42,7 +42,7 @@ fun LargeMovieCard(item: Film) {
     ) {
         SubcomposeAsyncImage(
             modifier = imageModifier,
-            model = item.images.poster,
+            model = item.images.poster.`1`.medium.film_image,
             contentScale = ContentScale.FillBounds,
             contentDescription = ""
         ) {
@@ -58,7 +58,7 @@ fun LargeMovieCard(item: Film) {
         }
         Text(
             modifier = Modifier.padding(horizontal = 10.dp),
-            text = item.filmName,
+            text = item.film_name ?: "",
             maxLines = 1,
             softWrap = true,
             overflow = TextOverflow.Ellipsis

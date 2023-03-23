@@ -9,6 +9,6 @@ import retrofit2.http.Header
 import retrofit2.http.Headers
 
 interface CinemaZillaApi {
-    @GET("filmsNowShowing/?n=10")
+    @GET("filmsNowShowing/?n=1")
     fun getFilmsNowShowing(@Header("device-datetime") date: String): Call<Movie>
 }
